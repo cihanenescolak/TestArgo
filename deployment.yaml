@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-api
+  namespace: backend
+spec:
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: test-api
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: test-api
+    spec:
+      containers:
+      - name: backend
+        image: relegance/mavitest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+           limits:
+             memory: 300Mi
+             cpu: 100m
+           requests:
+             memory: 200Mi
+             cpu: 50m
