@@ -8,10 +8,10 @@ metadata:
 spec:
   ingressClassName: nginx-ingress
   rules:
-  - host: localhost
+  - host: test.localhost
     http:
       paths:
-      - path: /test
+      - path: /
         pathType: Prefix
         backend:
           service:
