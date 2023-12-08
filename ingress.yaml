@@ -5,19 +5,15 @@ metadata:
   namespace: backend
   annotations:
 spec:
-  tls:
-  - hosts:
-    - localhost
-    secretName: letsencrypt-nginx
-  ingressClassName: nginx
+  ingressClassName: nginx-ingress
   rules:
   - host: localhost
     http:
       paths:
-      - path: /
+      - path: /test
         pathType: Prefix
         backend:
           service:
             name: test-api-service
             port:
-              number: 81
+              number: 80
