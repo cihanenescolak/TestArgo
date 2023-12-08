@@ -4,7 +4,6 @@ metadata:
   name: ingress-test-api
   namespace: backend
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   tls:
   - hosts:
